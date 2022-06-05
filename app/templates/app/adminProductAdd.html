@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}product Add{% endblock title %}
+{% block main-content %}
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>Product Adding</h3>
+   <hr>
+        <form  method="post" class="form-horizontal">
+
+    			<center><h2>Admin Product Input</h2></center>
+
+{% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+              
+              <div class="col-xs-8">
+              {{ field }}
+               </div>
+            </div>
+            {% endfor %}
+
+    		<div class="form-group">
+    			<div class="col-xs-8 col-xs-offset-4">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    			</div>
+    		</div>
+        </form>
+    	
+
+
+
+	{% endblock main-content %}

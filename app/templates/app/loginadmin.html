@@ -1,0 +1,38 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block main-content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3>Login</h3>
+            <hr>
+            <div class="signup-form">
+                <form method="post" class="form-horizontal">
+
+                    <center>
+                        <h2>Admin Signup</h2>
+                    </center>
+
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="form-group">
+                        <label class="control-label col-xs-4">{{ field.label_tag }}</label>
+                        <div class="col-xs-8">
+                            {{ field }}
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="form-group">
+                        <div class="col-xs-8 col-xs-offset-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center">Already have an account? <a href="adminlogin">Login here</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
